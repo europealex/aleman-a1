@@ -58,8 +58,9 @@ export default function AnimalesPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-100 p-6">
-      <div className="w-full max-w-md rounded-3xl bg-white p-6 shadow-xl">
+    <main className="w-full bg-gradient-to-br from-sky-100 via-white to-cyan-100 py-8 px-6">
+
+      <div className="mx-auto w-full max-w-2xl rounded-3xl bg-white p-8 shadow-xl">
 
         <Link
           href="/"
@@ -68,22 +69,32 @@ export default function AnimalesPage() {
           ← Volver al inicio
         </Link>
 
-        <h1 className="mb-6 text-center text-3xl font-bold">
-          Flashcards 🇩🇪 Animales
-        </h1>
+        <h1 className="mb-2 text-center text-4xl font-extrabold">
+  Was ist das?<span className="text-red-500">das?</span>
+</h1>
 
-        <div className="rounded-3xl border-2 border-green-200 bg-white p-6 shadow-lg">
-
+        <div className="mx-auto rounded-3xl bg-white p-6 shadow-2xl">
           <div className="flex justify-center">
-            <Image
-              src={animales[indice].imagen}
-              alt={animales[indice].palabra}
-              width={250}
-              height={250}
-              priority
-              className="object-contain"
-            />
-          </div>
+  <div
+    className="
+      rounded-3xl
+      p-3
+      border-4
+      border-cyan-400
+      shadow-[0_0_20px_#22d3ee,0_0_40px_#22d3ee]
+      bg-white
+    "
+  >
+    <Image
+      src={animales[indice].imagen}
+      alt={animales[indice].palabra}
+      width={250}
+      height={250}
+      priority
+      className="object-contain rounded-2xl"
+    />
+  </div>
+</div>
 
           <h2 className="mt-6 text-center text-4xl font-bold text-slate-800">
             {animales[indice].palabra}

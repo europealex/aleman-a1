@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -37,11 +36,9 @@ export default function AnimalesPage() {
   const [indice, setIndice] = useState(0);
   const [voces, setVoces] = useState<SpeechSynthesisVoice[]>([]);
 
-  // Cargar las voces disponibles en el navegador
   useEffect(() => {
     const cargarVoces = () => {
-      const vocesDisponibles = window.speechSynthesis.getVoices();
-      setVoces(vocesDisponibles);
+      setVoces(window.speechSynthesis.getVoices());
     };
 
     cargarVoces();
@@ -61,7 +58,6 @@ export default function AnimalesPage() {
     };
   }, []);
 
-  // Reproducir pronunciación en alemán
   const reproducirAudio = () => {
     window.speechSynthesis.cancel();
 
@@ -79,7 +75,6 @@ export default function AnimalesPage() {
       audio.voice = vozAlemana;
     }
 
-    // Velocidad y tono de pronunciación
     audio.rate = 0.85;
     audio.pitch = 1;
     audio.volume = 1;
@@ -87,12 +82,10 @@ export default function AnimalesPage() {
     window.speechSynthesis.speak(audio);
   };
 
-  // Siguiente animal
   const siguiente = () => {
     setIndice((prev) => (prev + 1) % animales.length);
   };
 
-  // Animal anterior
   const anterior = () => {
     setIndice((prev) =>
       prev === 0 ? animales.length - 1 : prev - 1
@@ -100,8 +93,9 @@ export default function AnimalesPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-100 p-6">
-      <div className="w-full max-w-md rounded-3xl bg-white p-6 shadow-xl">
+    <main className="w-full bg-gradient-to-br from-sky-100 via-white to-cyan-100 py-8 px-6">
+
+      <div className="mx-auto w-full max-w-2xl rounded-3xl bg-white p-8 shadow-xl">
 
         <Link
           href="/"
@@ -110,24 +104,52 @@ export default function AnimalesPage() {
           ← Volver al inicio
         </Link>
 
-        <h1 className="mb-6 text-center text-3xl font-bold">
-          Flashcards 🇩🇪 Animales
+        <h1 className="mb-2 text-center text-5xl font-extrabold">
+          Was ist <span className="text-red-500 drop-shadow-lg">das?</span>
         </h1>
 
-        <div className="rounded-3xl border-2 border-green-200 bg-white p-6 shadow-lg">
+        <p className="mb-6 text-center text-gray-500 font-semibold">
+          Was ist Das?
+        </p>
+
+        <div className="mx-auto rounded-3xl bg-white p-6 shadow-2xl">
 
           <div className="flex justify-center">
-            <Image
-              src={animales[indice].imagen}
-              alt={animales[indice].palabra}
-              width={250}
-              height={250}
-              priority
-              className="object-contain"
-            />
+
+            <div
+              className="
+                relative
+                rounded-[40px]
+                p-[5px]
+                bg-gradient-to-r
+                from-cyan-400
+                via-blue-500
+                via-purple-500
+                to-pink-500
+                shadow-[0_0_20px_#22d3ee,0_0_40px_#3b82f6,0_0_80px_#8b5cf6]
+              "
+            >
+              <div
+                className="
+                  rounded-[36px]
+                  bg-white
+                  p-4
+                "
+              >
+                <Image
+                  src={animales[indice].imagen}
+                  alt={animales[indice].palabra}
+                  width={400}
+                  height={400}
+                  priority
+                  className="object-contain rounded-3xl"
+                />
+              </div>
+            </div>
+
           </div>
 
-          <h2 className="mt-6 text-center text-4xl font-bold text-slate-800">
+          <h2 className="mt-8 text-center text-4xl font-bold text-slate-800">
             {animales[indice].palabra}
           </h2>
 
