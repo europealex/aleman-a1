@@ -487,14 +487,14 @@ export default function ConversacionAlemanPage() {
                 : iniciarMicrofono
             }
             disabled={cargando}
-            className={`mx-auto flex h-[100px] w-[100px] items-center justify-center rounded-full text-4xl text-white shadow-[0_7px_0_#1977d2] transition hover:scale-105 disabled:opacity-50 ${
-              escuchando ? "bg-red-500" : "bg-[#399bf4]"
-            }`}
-            aria-label={
-              escuchando
-                ? "Detener micrófono"
-                : "Hablar con el profesor"
-            }
+className={`mx-auto flex h-24 w-24 items-center justify-center rounded-full text-4xl text-white shadow-lg transition hover:scale-105 disabled:opacity-50 ${
+  escuchando ? "bg-red-500" : "bg-blue-500"
+}`}
+aria-label={
+  escuchando
+    ? "Detener micrófono"
+    : "Hablar con el profesor"
+}
           >
             {escuchando ? "■" : "🎙"}
           </button>
