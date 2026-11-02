@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 const categorias = [
@@ -43,6 +44,7 @@ export default function VocabularioPage() {
   return (
     <main className="min-h-screen bg-slate-50 px-5 py-10">
       <div className="mx-auto max-w-5xl">
+
         <header className="mb-10 text-center">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-indigo-600">
             Deutsch lernen
@@ -59,6 +61,7 @@ export default function VocabularioPage() {
         </header>
 
         <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
           {categorias.map((categoria) => (
             <Link
               key={categoria.ruta}
@@ -80,9 +83,12 @@ export default function VocabularioPage() {
               <div className="mt-5 font-semibold text-indigo-600">
                 Estudiar ahora →
               </div>
+
             </Link>
           ))}
+
         </section>
+
       </div>
     </main>
   );

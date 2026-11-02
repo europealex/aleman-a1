@@ -196,14 +196,16 @@ const InteractiveCard = memo(({ title, icon, items, color, delay }: CardProps) =
             ))}
           </ul>
 
-          <motion.button
-            onClick={handleStartExercises}
-            className={`w-full text-center px-4 py-2 text-sm bg-gradient-to-r ${scheme.button} text-white rounded-2xl shadow-lg font-semibold relative overflow-hidden`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="relative z-10">Start Exercises</span>
-          </motion.button>
+       <motion.button
+  onClick={handleStartExercises}
+  className={`w-full text-center px-4 py-2 text-sm bg-gradient-to-r ${scheme.button} text-white rounded-2xl shadow-lg font-semibold relative overflow-hidden`}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <span className="relative z-10">
+    Start Exercises
+  </span>
+</motion.button>
 
           <motion.p
             className="text-center mt-3 text-xs text-gray-500"
@@ -389,14 +391,14 @@ export default function B1Page() {
         ))}
       </div>
 
-      <motion.button
-        className="px-8 py-4 bg-gradient-to-r from-violet-700 to-violet-800 text-white rounded-2xl shadow-lg hover:shadow-xl font-semibold"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={handleBack}
-      >
-        ⬅ Back to Levels
-      </motion.button>
-    </div>
-  );
+  <motion.button
+  className="px-8 py-4 bg-gradient-to-r from-violet-700 to-violet-800 text-white rounded-2xl shadow-lg hover:shadow-xl font-semibold"
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={handleBack}
+>
+  ⬅ Back to Levels
+</motion.button>
+</div>
+);
 }
